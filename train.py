@@ -20,9 +20,10 @@ x, y = clean_data(ds)
 
 # TODO: Split data into train and test sets.
 
-x_train, x_test , y_train, y_test =  train_test_split(x,y)
+x_train, x_test , y_train, y_test =  train_test_split(x,y,random_state = 50)
 
 run = Run.get_context()
+# allow_offline = True
 
 def clean_data(data):
     # Dict for cleaning data
@@ -49,11 +50,11 @@ def clean_data(data):
     x_df["poutcome"] = x_df.poutcome.apply(lambda s: 1 if s == "success" else 0)
 
     y_df = x_df.pop("y").apply(lambda s: 1 if s == "yes" else 0)
-    
+    return x_df,y_df
 
 def main():
     # Add arguments to script
-    parser = argparse.ArgumentParser(description= 'training begin')
+    parser = argparse.ArgumentParser()
 
     parser.add_argument('--C', type=float, default=1.0, help="Inverse of regularization strength. Smaller values cause stronger regularization")
     parser.add_argument('--max_iter', type=int, default=100, help="Maximum number of iterations to converge")
@@ -67,6 +68,9 @@ def main():
 
     accuracy = model.score(x_test, y_test)
     run.log("Accuracy", np.float(accuracy))
+
+    os.makedirs(./outputs, exist_ok = True)
+    joblib.dump(value=model, filename ="./outputs/model.joblib")
 
 if __name__ == '__main__':
     main()
