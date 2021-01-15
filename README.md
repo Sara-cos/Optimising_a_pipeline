@@ -43,4 +43,5 @@ Deploy the model as inference endpoints.
 
 ## Proof of cluster clean up
 
-![alt text](https://github.com/Sara_cos/Optimising_a_pipeline/blob/main/cluster_cleanup.png?raw=true)
+![](cluster_cleanup.png)
+
