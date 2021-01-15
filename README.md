@@ -35,11 +35,11 @@ The best model was with 91.63% accuracy, as we know that AutoML uses multiple mo
 
 ## Future Work
 
-Use the Azure ML Explainability tool to understand why the models yield the results they do.
-Deeplearning in AutoML configuration could improve the accuracy of the model and trying other compute target.
-Use Grid and Bayesian sampling to determine the hyperparameters for the Hyperdrive experiment. It could be more expensive, but it could generate a better model.
-We can avoid an early stopping policy so the experiment can run longer. Maybe it will find a better model. (If the budget is not a constrain)
-Deploy the model as inference endpoints.
+1.Use the Azure ML Explainability tool to understand why the models yield the results they do.
+2.Deeplearning in AutoML configuration could improve the accuracy of the model and trying other compute target.
+3.Use Grid and Bayesian sampling to determine the hyperparameters for the Hyperdrive experiment. It could be more expensive, but it could generate a better model.
+4.We can avoid an early stopping policy so the experiment can run longer. Maybe it will find a better model. (If the budget is not a constrain)
+5.Deploy the model as inference endpoints.
 
 ## Proof of cluster clean up
 
