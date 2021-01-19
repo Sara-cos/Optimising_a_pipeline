@@ -62,6 +62,12 @@ Pipeline(memory=None,
                                                         0.13333333333333333]))],
          verbose=False)
  ```
+The below screenshot shows the analysed results:
+![](graphical_results.png)
+This showed that the feature called 'duration' of the phone calls mostly effected the subscription tendency.
+
+Ensembled Algorithms and 
+
 
 
 ## Pipeline Comparison
