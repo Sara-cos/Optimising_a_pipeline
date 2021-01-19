@@ -27,6 +27,43 @@ The BanditPolicy was used as early stopping policy, to avoid wasting computing t
 
 Auto Machine Learning give us the possibility to run diferent and multiple models with training jobs to find the right model. Best model was at accurary 91.63% and The Voting asemble algorithm was used. Also, we found out that the most important feature to determine the outcome of the best AutoML model is the "duration" of the phone call.
 
+The Voting Ensemble took 2 minutes and 51 seconds.
+Parameters Generated:-
+ ```
+Pipeline(memory=None,
+         steps=[('datatransformer',
+                 DataTransformer(enable_dnn=None, enable_feature_sweeping=None,
+                                 feature_sweeping_config=None,
+                                 feature_sweeping_timeout=None,
+                                 featurization_config=None, force_text_dnn=None,
+                                 is_cross_validation=None,
+                                 is_onnx_compatible=None, logger=None,
+                                 observer=None, task=None, working_dir=None)),
+                ('prefittedsoftvotingclassifier',...
+                                                                                                intercept_scaling=1,
+                                                                                                l1_ratio=None,
+                                                                                                max_iter=100,
+                                                                                                multi_class='ovr',
+                                                                                                n_jobs=1,
+                                                                                                penalty='l2',
+                                                                                                random_state=None,
+                                                                                                solver='saga',
+                                                                                                tol=0.0001,
+                                                                                                verbose=0,
+                                                                                                warm_start=False))],
+                                                                     verbose=False))],
+                                               flatten_transform=None,
+                                               weights=[0.4,
+                                                        0.13333333333333333,
+                                                        0.06666666666666667,
+                                                        0.06666666666666667,
+                                                        0.13333333333333333,
+                                                        0.06666666666666667,
+                                                        0.13333333333333333]))],
+         verbose=False)
+ ```
+
+
 ## Pipeline Comparison
 
 The AutoML model experiment was executed and controlled within the same Jupyter notebook as the Logistic Regression/Hyperdrive one. The same dataset was used, cleaned, one-hot encoded, and split. An experiment and computing cluster, similar to the Logistic Regression model, were setup. The Accuracy was used as benchmarking metric. The AutoML experiment was configured to run a classification task, with a maximum of 4 concurrent iterations (the computing cluster has 4 nodes), and 5 cross validation groups. Finally, the best performing model was registered in Azure ML, and the computing cluster was deleted.
