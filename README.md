@@ -27,6 +27,8 @@ The BanditPolicy was used as early stopping policy, to avoid wasting computing t
 
 Auto Machine Learning give us the possibility to run diferent and multiple models with training jobs to find the right model. Best model was at accurary 91.63% and The Voting asemble algorithm was used. Also, we found out that the most important feature to determine the outcome of the best AutoML model is the "duration" of the phone call.
 
+A voting ensemble works by combining the predictions from multiple models. It can be used for classification or regression. A voting ensemble (or a “majority voting ensemble“) is an ensemble machine learning model that combines the predictions from multiple other models.
+
 The Voting Ensemble took 2 minutes and 51 seconds.
 Parameters Generated:-
  ```
